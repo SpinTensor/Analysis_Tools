@@ -1,0 +1,12 @@
+FC = gfortran
+
+#Fast fourier transform library
+# Dynamic
+LIBFFTW = -Wl,-Bstatic -L$$HOME/lib/ -lfftw3 -Wl,-Bdynamic -lpthread
+# Include
+INCFFTW = -I$$HOME/include/
+
+FCFLAGS = -O3 -fbacktrace \
+          -fmax-errors=3 -fimplicit-none \
+          -D__MAX_RANK=3 -U__HAS_IQP -U__HAS_QP
+FCWFLAGS = -Wall -Wextra -Wpedantic -Wsurprising
